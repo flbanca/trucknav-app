@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="it">
+<head>
+<title>Privacy · TruckNav</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Informativa privacy di TruckNav: quali dati usa l'app, dove restano e a chi vengono inviati.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070f1a">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="TruckNav, pagina principale">
+      <img src="icon.png" alt="" width="34" height="34">
+      <span>TruckNav</span>
+    </a>
+    <nav aria-label="Sito">
+      <a href="index.html#sottopasso">Come funziona</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="supporto.html">Assistenza</a>
+      <a class="nav-cta" href="index.html#tester">Diventa tester</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="doc-hero full">
+    <span class="kick mono">Informativa privacy</span>
+    <h1 class="doc-title" aria-label="I tuoi dati restano tuoi.">
+      <span class="line"><span class="line-in">I tuoi dati</span></span>
+      <span class="line"><span class="line-in amber">restano tuoi.</span></span>
+    </h1>
+    <div class="doc-meta mono">
+      <span>Ultimo aggiornamento: 22 novembre 2026</span>
+      <span>Versione di prova (TestFlight)</span>
+    </div>
+  </section>
+
+  <div class="boxed doc">
+    <aside class="toc" aria-label="Indice">
+      <ol>
+        <li><a href="#breve">In breve</a></li>
+        <li><a href="#titolare">Titolare</a></li>
+        <li><a href="#telefono">Sul tuo telefono</a></li>
+        <li><a href="#percorso">Calcolo del percorso</a></li>
+        <li><a href="#mappa">Mappa</a></li>
+        <li><a href="#posizione">Posizione</a></li>
+        <li><a href="#segnalazioni">Segnalazioni</a></li>
+        <li><a href="#non">Cosa non facciamo</a></li>
+        <li><a href="#test">Test e contatti</a></li>
+        <li><a href="#sito">Questo sito</a></li>
+        <li><a href="#diritti">I tuoi diritti</a></li>
+      </ol>
+    </aside>
+
+    <article class="prose">
+      <section id="breve">
+        <h2>In breve</h2>
+        <div class="brief">
+          <div><b>Nessun nostro server</b><span>TruckNav non ha un server proprio. Non riceviamo i tuoi percorsi né la tua posizione.</span></div>
+          <div><b>Nessun account</b><span>Non serve registrarsi. Non chiediamo nome, email o telefono.</span></div>
+          <div><b>Nessuna pubblicità</b><span>Né pubblicità né strumenti di analisi o di tracciamento.</span></div>
+          <div><b>Solo il necessario</b><span>Per calcolare il percorso inviamo partenza, arrivo e misure del mezzo. Nient'altro.</span></div>
+        </div>
+        <p style="margin-top:20px">TruckNav è in fase di prova. Questa informativa descrive la versione di prova e verrà aggiornata prima dell'uscita sull'App Store.</p>
+      </section>
+
+      <section id="titolare">
+        <h2>Titolare</h2>
+        <p><strong>Francesca La Banca</strong><br><span class="mono">hello@flbanca.it</span></p>
+      </section>
+
+      <section id="telefono">
+        <h2>Dati che restano sul tuo telefono</h2>
+        <p>Questi dati sono salvati solo sul tuo dispositivo e non vengono inviati a noi. Se disinstalli l'app, vengono cancellati.</p>
+        <ul>
+          <li><strong>Profili dei mezzi</strong>: nome, tipo, altezza, larghezza, lunghezza, massa, assi e merci pericolose.</li>
+          <li><strong>Segnalazioni</strong> che crei: tipo, punto sulla mappa, ora ed eventuale nota.</li>
+          <li><strong>Zone di mappa già viste</strong>, conservate in una memoria temporanea per caricarle più in fretta.</li>
+        </ul>
+      </section>
+
+      <section id="percorso">
+        <h2>Calcolo del percorso</h2>
+        <p>Per calcolare un percorso adatto al tuo mezzo, l'app invia una richiesta al servizio di percorsi di <a href="https://stadiamaps.com/">Stadia Maps</a>, che usa il motore open source Valhalla.</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Cosa inviamo</th><th>Cosa non inviamo mai</th></tr></thead>
+            <tbody><tr>
+              <td>Coordinate di partenza e di arrivo. Misure, assi e merci pericolose del mezzo.</td>
+              <td>Il nome che dai al profilo, il tuo nome, identificativi del telefono o dell'utente.</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <p style="margin-top:16px">L'app non salva le coordinate dei percorsi. La connessione è sempre cifrata e non usa cookie né memoria sul disco. Stadia Maps tratta le richieste secondo la <a href="https://stadiamaps.com/privacy-policy/">propria informativa</a>.</p>
+      </section>
+
+      <section id="mappa">
+        <h2>Mappa</h2>
+        <p>Per disegnare la mappa, l'app scarica da Stadia Maps i riquadri delle zone che stai guardando, come fa qualsiasi app di mappe. La richiesta contiene la chiave dell'app e la zona, senza identificativi personali. Come per ogni connessione a internet, il servizio vede l'indirizzo IP da cui arriva la richiesta.</p>
+        <p>I dati della mappa sono © contributori di <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+      </section>
+
+      <section id="posizione">
+        <h2>Posizione</h2>
+        <ul>
+          <li>L'app chiede il permesso <strong>«Mentre usi l'app»</strong>, e solo quando serve, non all'avvio. Non chiede il permesso «Sempre».</li>
+          <li>La posizione serve a mostrarti sulla mappa, a partire da dove sei e a guidarti. Resta in memoria mentre usi l'app e <strong>non viene mai salvata</strong> né scritta nei registri.</li>
+          <li>Esce dal telefono solo come punto di partenza del calcolo del percorso, come descritto sopra.</li>
+          <li>Se scegli la posizione approssimativa, l'app te lo segnala: per guidare un mezzo pesante serve quella precisa.</li>
+        </ul>
+        <p>Puoi cambiare il permesso in qualsiasi momento da Impostazioni › Privacy e sicurezza › Servizi di localizzazione › TruckNav.</p>
+      </section>
+
+      <section id="segnalazioni">
+        <h2>Segnalazioni</h2>
+        <p>Le segnalazioni restano sul tuo telefono. Escono solo se scegli tu di esportarle, e in quel caso contengono:</p>
+        <ul>
+          <li>il punto, arrotondato a circa un metro;</li>
+          <li>l'ora, arrotondata all'ora intera;</li>
+          <li>un codice casuale diverso per ogni segnalazione;</li>
+          <li>la nota, solo se l'hai scritta.</li>
+        </ul>
+        <p>Non contengono identificativi del telefono o della persona. La nota è testo libero: <strong>non scrivere targhe, nomi o altri dati di persone.</strong></p>
+      </section>
+
+      <section id="non">
+        <h2>Cosa non facciamo</h2>
+        <ul>
+          <li>Non chiediamo di creare un account.</li>
+          <li>Non mostriamo pubblicità e non usiamo strumenti di analisi o di tracciamento.</li>
+          <li>Non seguiamo la tua attività tra app e siti di altre aziende.</li>
+          <li>Non vendiamo né cediamo dati a nessuno.</li>
+          <li>Non conserviamo la cronologia dei tuoi viaggi.</li>
+        </ul>
+      </section>
+
+      <section id="test">
+        <h2>Test e contatti</h2>
+        <h3>Se partecipi ai test</h3>
+        <p>La versione di prova è distribuita con TestFlight, gestito da Apple. Se ti invitiamo per email, usiamo l'indirizzo solo per l'invito e lo rimuoviamo su richiesta o alla fine del test. I rapporti sugli arresti anomali e i commenti che scegli di inviare ci arrivano tramite Apple, secondo l'<a href="https://www.apple.com/legal/privacy/">informativa di Apple</a>.</p>
+        <h3>Se ci scrivi</h3>
+        <p>Se ci contatti via email, usiamo il tuo indirizzo e il messaggio solo per risponderti e non li conserviamo più del necessario.</p>
+      </section>
+
+      <section id="sito">
+        <h2>Questo sito</h2>
+        <p>Il sito è ospitato da GitHub Pages. Non usa cookie, strumenti di analisi o servizi esterni: anche i caratteri tipografici sono ospitati qui. GitHub può registrare l'indirizzo IP dei visitatori per motivi di sicurezza, secondo la <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">propria informativa</a>.</p>
+      </section>
+
+      <section id="diritti">
+        <h2>I tuoi diritti</h2>
+        <p>In base al GDPR (Regolamento UE 2016/679) puoi chiedere accesso, rettifica o cancellazione dei dati che ci hai fornito scrivendo a <span class="mono">hello@flbanca.it</span>. Puoi anche presentare reclamo al <a href="https://www.garanteprivacy.it/">Garante per la protezione dei dati personali</a>.</p>
+        <h3>Modifiche</h3>
+        <p>Se l'informativa cambia, aggiorneremo questa pagina e la data in alto.</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="footer full">
+  <div class="foot-grid">
+    <div class="foot-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="supporto.html">Assistenza</a>
+      <span>Accessibilità <small>in arrivo</small></span>
+    </div>
+    <p>Dati della mappa © contributori di <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, licenza ODbL. Percorsi calcolati con Valhalla.</p>
+    <p>TruckNav è un aiuto alla guida: la segnaletica stradale prevale sempre. © 2026 TruckNav</p>
+  </div>
+  <div class="wordmark" aria-hidden="true">TruckNav</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -97,6 +97,43 @@
     });
   }
 
+  /* ---------- Pagine di testo: indice attivo e copia dell'indirizzo ---------- */
+  var tocLinks = document.querySelectorAll(".toc a");
+  if (tocLinks.length && "IntersectionObserver" in window) {
+    var byId = {};
+    tocLinks.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        tocLinks.forEach(function (a) { a.classList.remove("on"); });
+        var a = byId[e.target.id];
+        if (a) a.classList.add("on");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".prose > section[id]").forEach(function (s) { spy.observe(s); });
+  }
+
+  var copy = document.getElementById("copy");
+  if (copy) {
+    copy.addEventListener("click", function () {
+      var text = document.getElementById("addr").textContent.trim();
+      var done = function () { copy.textContent = "Copiato"; setTimeout(function () { copy.textContent = "Copia indirizzo"; }, 2000); };
+      var fallback = function () {
+        var range = document.createRange();
+        range.selectNodeContents(document.getElementById("addr"));
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        copy.textContent = "Selezionato: premi Copia";
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else {
+        fallback();
+      }
+    });
+  }
+
   /* ---------- Configuratore del mezzo ---------- */
   var S = 40;          // pixel per metro nel disegno
   var GROUND = 230;

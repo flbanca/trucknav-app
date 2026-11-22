@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+<head>
+<title>Assistenza · TruckNav</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Assistenza per TruckNav: come contattarci, problemi comuni e fonti dei dati.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070f1a">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="TruckNav, pagina principale">
+      <img src="icon.png" alt="" width="34" height="34">
+      <span>TruckNav</span>
+    </a>
+    <nav aria-label="Sito">
+      <a href="index.html#sottopasso">Come funziona</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="supporto.html" aria-current="page">Assistenza</a>
+      <a class="nav-cta" href="index.html#tester">Diventa tester</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="doc-hero full">
+    <span class="kick mono">Assistenza</span>
+    <h1 class="doc-title" aria-label="Qualcosa non va? Scrivici.">
+      <span class="line"><span class="line-in">Qualcosa non va?</span></span>
+      <span class="line"><span class="line-in amber">Scrivici.</span></span>
+    </h1>
+    <div class="doc-meta mono">
+      <span>Versione di prova (TestFlight)</span>
+      <span>iPhone · iOS 26</span>
+    </div>
+  </section>
+
+  <div class="boxed doc">
+    <aside class="toc" aria-label="Indice">
+      <ol>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#problemi">Problemi comuni</a></li>
+        <li><a href="#dati">I tuoi dati</a></li>
+        <li><a href="#requisiti">Requisiti</a></li>
+        <li><a href="#fonti">Fonti dei dati</a></li>
+      </ol>
+    </aside>
+
+    <article class="prose">
+      <section id="contatti">
+        <h2>Contatti</h2>
+        <div class="contact">
+          <div>
+            <div class="addr" id="addr">hello@flbanca.it</div>
+            <p>Per aiutarti più in fretta, scrivi il modello di iPhone, la versione di iOS, la versione di TruckNav e cosa stavi facendo. Se il problema riguarda un punto preciso, indica la strada o il paese, senza mandare la tua posizione in tempo reale.</p>
+          </div>
+          <div class="cta-row">
+            <a class="cta" href="mailto:hello@flbanca.it?subject=TruckNav%20%C2%B7%20assistenza"><span>Scrivi una email</span></a>
+            <button class="copy-btn" type="button" id="copy">Copia indirizzo</button>
+          </div>
+        </div>
+        <p>Se partecipi ai test, puoi anche inviare un commento con uno screenshot da TestFlight: fai uno screenshot nell'app e tocca «Condividi beta feedback».</p>
+      </section>
+
+      <section id="problemi">
+        <h2>Problemi comuni</h2>
+
+        <h3>La mappa non mostra dove sono</h3>
+        <p>Apri Impostazioni › Privacy e sicurezza › Servizi di localizzazione › TruckNav e scegli «Mentre usi l'app», con «Posizione esatta» attiva. Con la posizione approssimativa l'app non può guidarti con precisione.</p>
+
+        <h3>Il percorso passa dove un cartello lo vieta</h3>
+        <p>Segui sempre il cartello: la segnaletica prevale sull'app. I dati stradali possono essere incompleti o non aggiornati. Crea una segnalazione su quel punto e, se puoi, scrivici la strada: ci aiuta a capire se il limite manca nei dati di OpenStreetMap.</p>
+
+        <h3>Il percorso non sembra adatto al mio mezzo</h3>
+        <p>Controlla che il profilo attivo sia quello giusto e che altezza, larghezza, lunghezza, massa e assi siano corretti. Ogni percorso viene calcolato su quelle misure.</p>
+
+        <h3>Il percorso non si calcola</h3>
+        <p>Serve una connessione a internet. Se la connessione c'è e l'errore resta, scrivici partenza e arrivo approssimativi, per esempio i due paesi, e l'ora del tentativo.</p>
+
+        <h3>Il tempo di guida non coincide con il tachigrafo</h3>
+        <p>Il conteggio dell'app è un promemoria basato sul percorso. Il riferimento legale per guida e pause resta il tachigrafo.</p>
+      </section>
+
+      <section id="dati">
+        <h2>I tuoi dati</h2>
+        <p>Profili dei mezzi e segnalazioni stanno solo sul tuo telefono. Per cancellarli elimina i profili dall'app oppure disinstalla TruckNav. Non abbiamo copie da cancellare sui nostri sistemi. I dettagli sono nell'<a href="privacy.html">informativa privacy</a>.</p>
+      </section>
+
+      <section id="requisiti">
+        <h2>Requisiti</h2>
+        <ul>
+          <li>iPhone con iOS 26 o successivo.</li>
+          <li>Connessione a internet per calcolare i percorsi e caricare la mappa.</li>
+          <li>Per ora TruckNav è disponibile solo in prova con TestFlight. Non c'è una versione per Android.</li>
+        </ul>
+      </section>
+
+      <section id="fonti">
+        <h2>Fonti dei dati</h2>
+        <ul>
+          <li>Strade e limiti: © contributori di <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, licenza ODbL.</li>
+          <li>Calcolo dei percorsi: motore open source <a href="https://github.com/valhalla/valhalla">Valhalla</a>, tramite <a href="https://stadiamaps.com/">Stadia Maps</a>.</li>
+          <li>Disegno della mappa: <a href="https://maplibre.org/">MapLibre</a>.</li>
+        </ul>
+        <p>TruckNav è un aiuto alla guida e non è affiliata a enti stradali o produttori di veicoli.</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="footer full">
+  <div class="foot-grid">
+    <div class="foot-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="supporto.html">Assistenza</a>
+      <span>Accessibilità <small>in arrivo</small></span>
+    </div>
+    <p>Dati della mappa © contributori di <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, licenza ODbL. Percorsi calcolati con Valhalla.</p>
+    <p>TruckNav è un aiuto alla guida: la segnaletica stradale prevale sempre. © 2026 TruckNav</p>
+  </div>
+  <div class="wordmark" aria-hidden="true">TruckNav</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
