@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="it">
+<head>
+<title>TruckNav</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Navigatore per camion e bilici: percorsi calcolati su altezza, peso e lunghezza del tuo mezzo, guida vocale in italiano, pause UE e segnalazioni degli autisti.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070f1a">
+<meta property="og:title" content="TruckNav · Il tuo bilico. La strada giusta.">
+<meta property="og:description" content="Percorsi calcolati sulle misure reali del tuo mezzo.">
+<meta property="og:image" content="icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top" aria-label="TruckNav, torna su">
+      <img src="icon.png" alt="" width="34" height="34">
+      <span>TruckNav</span>
+    </a>
+    <span class="pill-preview" title="Testi e funzioni da confermare prima del lancio">Anteprima</span>
+    <nav aria-label="Sezioni">
+      <a href="#sottopasso">Come funziona</a>
+      <a href="#misure">Misure</a>
+      <a href="#pause">Pause</a>
+      <a href="#faq">Domande</a>
+      <a class="nav-cta" href="#tester">Diventa tester</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO (tutta larghezza) ============ -->
+  <section class="hero full">
+    <div class="hero-meta mono" aria-hidden="true">
+      <span><i class="dot"></i>Profilo attivo</span>
+      <span>Bilico · 4,00 m · 2,55 m · 16,50 m · 40 t</span>
+      <span class="hide-sm">Navigatore per camion · iPhone</span>
+    </div>
+
+    <h1 class="mega" aria-label="Il tuo bilico. La strada giusta.">
+      <span class="line"><span class="line-in">Il tuo</span></span>
+      <span class="line"><span class="line-in stretch" data-stretch>bilico.</span></span>
+      <span class="line"><span class="line-in">La strada</span></span>
+      <span class="line"><span class="line-in amber">giusta.</span></span>
+    </h1>
+
+    <div class="hero-foot">
+      <p class="lead">Percorsi calcolati su altezza, peso e lunghezza del tuo mezzo. Guida vocale in italiano, pause secondo le regole UE e segnalazioni degli altri autisti.</p>
+      <div class="cta-row">
+        <a class="cta" href="#tester" data-magnetic><span>Diventa tester</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-6 6 6-6 6"/></svg></a>
+        <a class="cta ghost" href="#sottopasso">Guarda come funziona</a>
+      </div>
+    </div>
+
+    <div class="hero-phone" aria-hidden="true">
+      <div class="phone">
+        <div class="screen">
+          <svg class="map" viewBox="0 0 270 585" preserveAspectRatio="xMidYMid slice">
+            <rect width="270" height="585" fill="#13233a"/>
+            <g fill="#192c46">
+              <rect x="-10" y="40" width="120" height="150" rx="10"/><rect x="150" y="20" width="140" height="170" rx="10"/>
+              <rect x="170" y="230" width="120" height="150" rx="10"/><rect x="-10" y="230" width="120" height="150" rx="10"/>
+              <rect x="-10" y="420" width="120" height="180" rx="10"/><rect x="170" y="420" width="120" height="180" rx="10"/>
+            </g>
+            <path d="M 0 210 H 270 M 140 0 V 585 M 0 400 H 270" stroke="#253c5a" stroke-width="22"/>
+            <path d="M 140 600 V 210 H 290" stroke="#ff8a00" stroke-opacity="0.3" stroke-width="22" fill="none" stroke-linejoin="round"/>
+            <path class="route-live" d="M 140 600 V 210 H 290" stroke="#ffb21e" stroke-width="9" fill="none" stroke-linejoin="round"/>
+            <path d="M 0 400 H 118" stroke="#ff4d3d" stroke-width="6" stroke-dasharray="8 8"/>
+            <g transform="translate(140 470)">
+              <circle r="22" fill="#ffffff" opacity="0.16"/>
+              <path d="M 0 -15 L 11 13 L 0 7 L -11 13 Z" fill="#ffb21e" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+            </g>
+          </svg>
+          <div class="maneuver">
+            <div class="arrow"><svg viewBox="0 0 24 24"><path d="M6 21V11a3 3 0 0 1 3-3h9m-4-4 4 4-4 4"/></svg></div>
+            <div><b class="mono">350 m</b><span>A destra su SP 12</span></div>
+          </div>
+          <div class="warn-chip"><i class="mono">3,8</i>Sottopasso evitato</div>
+          <div class="eta-bar mono">
+            <div><b>14:52</b><small>arrivo</small></div>
+            <div><b>86 km</b><small>mancano</small></div>
+            <div><b>1:10</b><small>alla pausa</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strada animata -->
+  <div class="road" aria-hidden="true">
+    <svg viewBox="0 0 1600 120" preserveAspectRatio="none">
+      <rect width="1600" height="120" fill="#0e1b2b"/>
+      <path d="M0 14H1600M0 106H1600" stroke="#f2f5f9" stroke-opacity="0.5" stroke-width="3"/>
+      <path class="lane" d="M0 60H1600" stroke="#ffb21e" stroke-width="5" stroke-dasharray="56 44"/>
+    </svg>
+    <svg class="road-truck" viewBox="0 0 200 60" aria-hidden="true">
+      <rect x="0" y="6" width="130" height="34" rx="4" fill="#f2f5f9"/>
+      <path d="M136 16h30q8 0 12 8l8 12v10h-50z" fill="#f2f5f9"/>
+      <rect x="2" y="42" width="184" height="6" rx="3" fill="#f2f5f9"/>
+      <g fill="#070f1a" stroke="#f2f5f9" stroke-width="4"><circle cx="20" cy="50" r="8"/><circle cx="42" cy="50" r="8"/><circle cx="110" cy="50" r="8"/><circle cx="168" cy="50" r="8"/></g>
+    </svg>
+  </div>
+
+  <!-- Marquee delle misure -->
+  <section class="marquee" aria-label="Cosa considera il percorso">
+    <div class="mq-row outline" aria-hidden="true">
+      <div class="mq-track">
+        <span>Altezza 4,00 m</span><i></i><span>Larghezza 2,55 m</span><i></i><span>Lunghezza 16,50 m</span><i></i><span>Massa 40 t</span><i></i><span>5 assi</span><i></i>
+        <span>Altezza 4,00 m</span><i></i><span>Larghezza 2,55 m</span><i></i><span>Lunghezza 16,50 m</span><i></i><span>Massa 40 t</span><i></i><span>5 assi</span><i></i>
+      </div>
+    </div>
+    <div class="mq-row solid reverse" aria-hidden="true">
+      <div class="mq-track">
+        <span>Sottopassi</span><i></i><span>Ponti</span><i></i><span>Gallerie</span><i></i><span>Strettoie</span><i></i><span>Rotonde strette</span><i></i><span>Divieti ai mezzi pesanti</span><i></i>
+        <span>Sottopassi</span><i></i><span>Ponti</span><i></i><span>Gallerie</span><i></i><span>Strettoie</span><i></i><span>Rotonde strette</span><i></i><span>Divieti ai mezzi pesanti</span><i></i>
+      </div>
+    </div>
+    <p class="sr">Il percorso considera altezza, larghezza, lunghezza, massa e assi del mezzo, ed evita sottopassi, ponti, gallerie, strettoie, rotonde strette e divieti ai mezzi pesanti.</p>
+  </section>
+
+  <!-- ============ STORIA A SCORRIMENTO (tutta larghezza) ============ -->
+  <section class="story" id="sottopasso">
+    <div class="story-track" data-step="0">
+      <div class="story-sticky">
+        <div class="story-head full">
+          <div class="story-count mono"><span id="st-count">01</span> / 03</div>
+          <div class="story-steps">
+            <h2 class="story-step s0"><span class="kick mono">Sulla strada</span>Davanti c'è un sottopasso. <em>3,80&nbsp;metri.</em></h2>
+            <h2 class="story-step s1"><span class="kick mono">Il tuo mezzo</span>Il tuo bilico è alto 4,00&nbsp;m. <em>Non ci passa.</em></h2>
+            <h2 class="story-step s2"><span class="kick mono">TruckNav</span>Lo sa prima e cambia strada. <em>Più 4&nbsp;minuti, zero sorprese.</em></h2>
+          </div>
+        </div>
+
+        <div class="scene">
+          <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <!-- fondo -->
+            <path d="M0 440H1600V520H0Z" fill="#0e1b2b"/>
+            <path d="M0 442H1600" stroke="#f2f5f9" stroke-opacity="0.35" stroke-width="3"/>
+            <path d="M0 486H1600" stroke="#ffb21e" stroke-opacity="0.6" stroke-width="5" stroke-dasharray="56 44"/>
+            <!-- spalle del ponte (dietro) -->
+            <path d="M1010 288V440M1210 288V440" stroke="#1f3655" stroke-width="26"/>
+            <!-- impalcato -->
+            <g class="bridge">
+              <rect x="960" y="226" width="300" height="62" rx="4" fill="#1d3352"/>
+              <path class="deck-edge" d="M960 288H1260" stroke="#3a5a82" stroke-width="5"/>
+              <path d="M960 214H1260M960 206H1260" stroke="#3a5a82" stroke-width="4"/>
+              <g stroke="#3a5a82" stroke-width="3"><path d="M985 226V214M1035 226V214M1085 226V214M1135 226V214M1185 226V214M1235 226V214"/></g>
+              <!-- cartello -->
+              <g transform="translate(1110 257)">
+                <circle r="25" fill="#fff" stroke="#ff4d3d" stroke-width="7"/>
+                <text y="6" text-anchor="middle" class="svg-mono" font-size="16" font-weight="700" fill="#070f1a">3,8m</text>
+              </g>
+            </g>
+            <!-- quota del sottopasso -->
+            <g class="dim dim-bridge">
+              <path d="M1290 292V436M1280 288H1300M1280 440H1300" stroke="#f2f5f9" stroke-opacity="0.7" stroke-width="3"/>
+              <text x="1310" y="372" class="svg-mono" font-size="22" fill="#f2f5f9">3,80 m</text>
+            </g>
+            <!-- bilico -->
+            <g id="st-truck" transform="translate(-80 0)">
+              <rect x="0" y="280" width="470" height="112" rx="8" fill="#f2f5f9"/>
+              <rect class="clash" x="0" y="280" width="470" height="8" fill="#ff4d3d"/>
+              <path d="M490 322h110q20 0 32 22l22 40q6 10 6 22v24H490z" fill="#f2f5f9"/>
+              <path d="M590 334h20q8 0 12 8l20 36h-52z" fill="#1f4470"/>
+              <rect x="6" y="396" width="650" height="16" rx="6" fill="#f2f5f9"/>
+              <g fill="#070f1a" stroke="#f2f5f9" stroke-width="9">
+                <circle cx="56" cy="420" r="20"/><circle cx="108" cy="420" r="20"/><circle cx="160" cy="420" r="20"/>
+                <circle cx="420" cy="420" r="20"/><circle cx="600" cy="420" r="20"/>
+              </g>
+              <g class="dim dim-truck">
+                <path d="M-34 284V436M-44 280H-24M-44 440H-24" stroke="#ffb21e" stroke-width="3"/>
+                <text x="-48" y="372" text-anchor="end" class="svg-mono" font-size="22" fill="#ffb21e">4,00 m</text>
+              </g>
+            </g>
+            <!-- differenza -->
+            <g class="gap-label">
+              <text x="950" y="270" text-anchor="end" class="svg-mono" font-size="24" font-weight="700" fill="#ff4d3d">+20 cm</text>
+            </g>
+          </svg>
+
+          <div class="reroute" aria-hidden="true">
+            <div class="reroute-head mono"><i class="dot"></i>Percorso ricalcolato</div>
+            <svg viewBox="0 0 260 150">
+              <rect width="260" height="150" rx="14" fill="#0e1b2b"/>
+              <path d="M20 120H240" stroke="#2a4466" stroke-width="10" stroke-linecap="round"/>
+              <path d="M20 120H240" stroke="#ff4d3d" stroke-opacity="0.5" stroke-width="4" stroke-dasharray="8 8"/>
+              <g transform="translate(150 120)" stroke="#ff4d3d" stroke-width="5" stroke-linecap="round"><path d="M-9 -9L9 9M9 -9L-9 9"/></g>
+              <path class="detour" d="M20 120H70Q90 120 92 100V50Q94 30 114 30H196Q216 30 218 50V100Q220 120 240 120" fill="none" stroke="#ffb21e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="20" cy="120" r="7" fill="#f2f5f9"/><circle cx="240" cy="120" r="8" fill="#ffb21e"/>
+            </svg>
+            <div class="reroute-foot mono"><span>+4 min</span><span>+2,1 km</span><span>0 ostacoli</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONFIGURATORE (fascia a tutta larghezza) ============ -->
+  <section class="band" id="misure">
+    <div class="full">
+      <div class="section-head">
+        <span class="kick mono">Il profilo del mezzo</span>
+        <h2 class="h2" data-reveal>Prima le misure.<br><span class="amber">Poi la strada.</span></h2>
+        <p class="lead">Inserisci una volta le misure del tuo mezzo. Ogni percorso viene calcolato su quelle. Prova qui: muovi i cursori e guarda cosa cambia su un tragitto di esempio.</p>
+      </div>
+
+      <div class="cfg">
+        <div class="cfg-stage">
+          <svg id="cfg-svg" viewBox="0 0 1000 260" aria-hidden="true">
+            <path d="M0 230H1000" stroke="#f2f5f9" stroke-opacity="0.3" stroke-width="2"/>
+            <g class="limit" id="lim-43"><path d="M0 58H1000" stroke-dasharray="6 8"/><text x="996" y="50" text-anchor="end" class="svg-mono" font-size="15">Galleria 4,30 m</text></g>
+            <g class="limit" id="lim-38"><path d="M0 78H1000" stroke-dasharray="6 8"/><text x="996" y="96" text-anchor="end" class="svg-mono" font-size="15">Sottopasso 3,80 m</text></g>
+            <g id="cfg-truck">
+              <rect id="cfg-trailer" x="60" y="70" width="560" height="110" rx="6" fill="#f2f5f9"/>
+              <path id="cfg-cab" d="" fill="#f2f5f9"/>
+              <rect id="cfg-chassis" x="64" y="182" width="700" height="12" rx="5" fill="#f2f5f9"/>
+              <g id="cfg-wheels" fill="#070f1a" stroke="#f2f5f9" stroke-width="7"></g>
+            </g>
+            <text id="cfg-len" x="60" y="256" class="svg-mono" font-size="15" fill="#ffb21e"></text>
+          </svg>
+          <div class="cfg-readout mono" id="cfg-readout" aria-live="polite"></div>
+        </div>
+
+        <div class="cfg-grid">
+          <div class="sliders">
+            <div class="slider"><label for="h"><span>Altezza</span><output id="h-out" for="h"></output></label><input id="h" type="range" min="3.2" max="4.4" step="0.05" value="4"></div>
+            <div class="slider"><label for="wd"><span>Larghezza</span><output id="wd-out" for="wd"></output></label><input id="wd" type="range" min="2.0" max="2.6" step="0.05" value="2.55"></div>
+            <div class="slider"><label for="ln"><span>Lunghezza</span><output id="ln-out" for="ln"></output></label><input id="ln" type="range" min="7" max="18.75" step="0.25" value="16.5"></div>
+            <div class="slider"><label for="ms"><span>Massa complessiva</span><output id="ms-out" for="ms"></output></label><input id="ms" type="range" min="7.5" max="44" step="0.5" value="40"></div>
+          </div>
+          <div>
+            <ul class="obstacles" id="obstacles">
+              <li data-k="h" data-lim="3.8"><span class="sign mono">3,8 m</span><div><b>Sottopasso ferroviario</b><small>Ingresso zona industriale</small></div><em></em></li>
+              <li data-k="h" data-lim="4.3"><span class="sign mono">4,3 m</span><div><b>Galleria</b><small>Variante della statale</small></div><em></em></li>
+              <li data-k="ms" data-lim="18"><span class="sign mono">18 t</span><div><b>Ponte sul torrente</b><small>Strada provinciale</small></div><em></em></li>
+              <li data-k="wd" data-lim="2.3"><span class="sign mono">2,3 m</span><div><b>Strettoia</b><small>Attraversamento del paese</small></div><em></em></li>
+              <li data-k="ln" data-lim="12"><span class="sign mono">12 m</span><div><b>Centro storico</b><small>Limite di lunghezza</small></div><em></em></li>
+            </ul>
+            <p class="cfg-sum" id="cfg-sum"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAUSE (centrato) ============ -->
+  <section class="boxed" id="pause">
+    <div class="pause">
+      <div class="ring" id="ring" aria-label="Esempio: 3 ore e 42 minuti di guida su 4 ore e 30">
+        <svg viewBox="0 0 320 320" aria-hidden="true">
+          <circle cx="160" cy="160" r="140" fill="none" stroke="#14263d" stroke-width="18"/>
+          <circle class="ring-ticks" cx="160" cy="160" r="118" fill="none" stroke="#f2f5f9" stroke-opacity="0.25" stroke-width="8" stroke-dasharray="1.5 22.6"/>
+          <circle class="ring-arc" cx="160" cy="160" r="140" fill="none" stroke="url(#amb)" stroke-width="18" stroke-linecap="round" transform="rotate(-90 160 160)"/>
+          <defs><linearGradient id="amb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a00"/><stop offset="1" stop-color="#ffb21e"/></linearGradient></defs>
+        </svg>
+        <div class="ring-num"><b class="mono">3:42</b><span>di guida<br>dall'ultima pausa</span></div>
+      </div>
+      <div class="pause-text">
+        <span class="kick mono">Regolamento (CE) n. 561/2006</span>
+        <h2 class="h2" data-reveal>La pausa arriva<br><span class="amber">prima del limite.</span></h2>
+        <p class="lead">TruckNav conta il tempo di guida lungo il percorso e ti avvisa quando si avvicina la pausa, con le aree di sosta per camion più vicine.</p>
+        <dl class="facts mono">
+          <div><dt>4:30 h</dt><dd>guida continua massima</dd></div>
+          <div><dt>45 min</dt><dd>pausa, anche divisa in 15 + 30</dd></div>
+          <div><dt>9 h</dt><dd>guida giornaliera, 10 h due volte a settimana</dd></div>
+        </dl>
+        <p class="note">È un promemoria: il riferimento legale resta il tachigrafo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGNALAZIONI (centrato) ============ -->
+  <section class="boxed" id="segnalazioni">
+    <div class="section-head">
+      <span class="kick mono">Dagli autisti, per gli autisti</span>
+      <h2 class="h2" data-reveal>Chi è passato prima<br><span class="amber">te lo dice.</span></h2>
+      <p class="lead">Dove la mappa non basta, aiutano le segnalazioni di chi guida lo stesso tipo di mezzo.</p>
+    </div>
+    <ul class="reports">
+      <li data-reveal><span class="r-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span><div><b>Rotonda stretta</b><small>Bilico oltre 16 m: serve tutta la carreggiata</small></div><span class="r-meta mono">2 giorni fa · 14 conferme</span><svg class="r-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-6 6 6-6 6"/></svg></li>
+      <li data-reveal><span class="r-ico"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20l4-14h4l4 14M9 14h6"/></svg></span><div><b>Cantiere</b><small>Corsia ridotta a 3 m fino a fine mese</small></div><span class="r-meta mono">oggi · 6 conferme</span><svg class="r-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-6 6 6-6 6"/></svg></li>
+      <li data-reveal><span class="r-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg></span><div><b>Parcheggio camion</b><small>Posti liberi la sera, piazzale illuminato</small></div><span class="r-meta mono">ieri · 21 conferme</span><svg class="r-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-6 6 6-6 6"/></svg></li>
+      <li data-reveal><span class="r-ico"><svg viewBox="0 0 24 24"><path d="M3 17h18M7 17V9l5-4 5 4v8"/></svg></span><div><b>Piazzale di carico</b><small>Non si gira: entrare in retromarcia</small></div><span class="r-meta mono">3 giorni fa · 9 conferme</span><svg class="r-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-6 6 6-6 6"/></svg></li>
+    </ul>
+    <p class="note center">Esempi illustrativi. La manovrabilità si decide con la geometria della strada e le segnalazioni.</p>
+  </section>
+
+  <!-- ============ BENTO (centrato) ============ -->
+  <section class="boxed">
+    <div class="section-head">
+      <span class="kick mono">E poi</span>
+      <h2 class="h2" data-reveal>Per chi guida<br><span class="amber">tutto il giorno.</span></h2>
+    </div>
+    <div class="bento">
+      <article class="b-wide b-voice" data-reveal>
+        <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h3>Guida vocale in italiano</h3>
+        <p>«Tra 500 metri, tieni la destra per l'uscita 12.» Le indicazioni arrivano in anticipo, con i tempi di un mezzo pesante.</p>
+      </article>
+      <article class="b-wide" data-reveal>
+        <ul class="chips mono" aria-hidden="true"><li class="on">Bilico</li><li>Motrice</li><li>Autotreno</li><li>Furgone 7,5 t</li></ul>
+        <h3>Più profili mezzo</h3>
+        <p>Salvi le misure di ogni mezzo e scegli quello di oggi prima di partire.</p>
+      </article>
+      <article data-reveal><h3>Corsie e uscite</h3><p>La corsia giusta prima dello svincolo.</p></article>
+      <article data-reveal><span class="soon mono">In programma</span><h3>Merci pericolose</h3><p>Restrizioni ADR e categorie delle gallerie.</p></article>
+      <article data-reveal><span class="soon mono">In programma</span><h3>Divieti festivi</h3><p>Calendario dei divieti di circolazione per i mezzi pesanti.</p></article>
+      <article data-reveal><span class="soon mono">In programma</span><h3>Schermo bloccato</h3><p>La prossima manovra sulla schermata di blocco.</p></article>
+    </div>
+  </section>
+
+  <!-- ============ PROMESSE (tutta larghezza) ============ -->
+  <section class="promises full" aria-labelledby="prom-title">
+    <span class="kick mono" id="prom-title">Le nostre promesse</span>
+    <ul>
+      <li data-fill><span class="p-big">Niente pubblicità.</span><span class="p-small mono">Né banner né percorsi sponsorizzati</span></li>
+      <li data-fill><span class="p-big">Niente account.</span><span class="p-small mono">Apri l'app e parti</span></li>
+      <li data-fill><span class="p-big">Niente tracciamento.</span><span class="p-small mono">La posizione serve solo a guidarti</span></li>
+      <li data-fill><span class="p-big">I tuoi mezzi restano tuoi.</span><span class="p-small mono">Profili e preferiti stanno sul telefono</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ AVVERTENZA (centrato) ============ -->
+  <section class="boxed tight">
+    <div class="caution" data-reveal>
+      <svg viewBox="0 0 120 106" aria-hidden="true"><path d="M60 6L114 100H6Z" fill="#fff" stroke="#ff4d3d" stroke-width="10" stroke-linejoin="round"/><path d="M60 40v30" stroke="#070f1a" stroke-width="9" stroke-linecap="round"/><circle cx="60" cy="84" r="5.5" fill="#070f1a"/></svg>
+      <div>
+        <h2>La segnaletica prevale sempre.</h2>
+        <p>TruckNav dà indicazioni, non ordini. I dati stradali possono essere incompleti: se un cartello dice altro, vale il cartello. Il conteggio delle pause è un promemoria e non sostituisce il tachigrafo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ (centrato stretto) ============ -->
+  <section class="boxed" id="faq">
+    <div class="section-head center">
+      <span class="kick mono">Prima di provarla</span>
+      <h2 class="h2" data-reveal>Domande</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Quanto costa?</summary><p>Durante la fase di prova è gratuita. Le condizioni della versione pubblica saranno scritte qui prima dell'uscita.</p></details>
+      <details><summary>Come sa dove passa il mio mezzo?</summary><p>Usa le misure del profilo del mezzo e i limiti di altezza, peso, larghezza e lunghezza presenti nei dati stradali di OpenStreetMap. Le segnalazioni degli autisti completano dove i dati mancano.</p></details>
+      <details><summary>Posso fidarmi al cento per cento?</summary><p>No, e nessun navigatore lo permette. I dati possono essere incompleti o non aggiornati. Guarda sempre i cartelli: se dicono altro, valgono loro.</p></details>
+      <details><summary>Sostituisce il tachigrafo?</summary><p>No. Il conteggio delle pause aiuta a organizzare il viaggio. Il riferimento legale resta il tachigrafo.</p></details>
+      <details><summary>Usa la mia posizione?</summary><p>Sì, solo mentre navighi, per guidarti lungo il percorso. Non viene salvata né venduta.</p></details>
+      <details><summary>C'è per Android?</summary><p>Per ora no. La prima versione è per iPhone.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ CHIUSURA (tutta larghezza) ============ -->
+  <section class="closing full" id="tester">
+    <p class="kick mono">TestFlight · iPhone con iOS 26</p>
+    <h2 class="giant" data-reveal>Parti.</h2>
+    <div class="closing-row">
+      <p class="lead">Cerchiamo autisti che la usino su percorsi veri e ci dicano dove sbaglia. Il link per iscriverti arriva a breve.</p>
+      <a class="cta" href="#tester" data-magnetic><span>Diventa tester</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-6 6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer full">
+  <div class="foot-grid">
+    <div class="foot-links">
+      <span>Privacy <small>in arrivo</small></span>
+      <span>Assistenza <small>in arrivo</small></span>
+      <span>Accessibilità <small>in arrivo</small></span>
+    </div>
+    <p>Dati della mappa © contributori di <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, licenza ODbL. Percorsi calcolati con Valhalla.</p>
+    <p>TruckNav è un aiuto alla guida: la segnaletica stradale prevale sempre. © 2026 TruckNav</p>
+  </div>
+  <div class="wordmark" aria-hidden="true">TruckNav</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
